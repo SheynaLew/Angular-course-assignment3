@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   displayParagraph = false;
-  count = 0;
+  clickCount = [];
 
   onDisplayParagraph(event:any) {
     if (this.displayParagraph === false) {
@@ -15,16 +15,16 @@ export class AppComponent {
     } else {
       this.displayParagraph = false;
     }
-    this.count++;
+    this.clickCount.push(this.clickCount.length + 1);
   }
 
-  changesStyle() {
-    if (this.count >= 5) {
-      return {
-        backgroundColor: "blue",
-        color: "white"
-      }
-    }
-  }
+  // changesStyle() {
+  //   if (this.clickCount.length >= 5) {
+  //     return {
+  //       backgroundColor: "blue",
+  //       color: "white"
+  //     }
+  //   }
+  // }
 
 }

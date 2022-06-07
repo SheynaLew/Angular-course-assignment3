@@ -11,7 +11,12 @@
 
       <button class="btn btn-primary" (click)="onDisplayParagraph()">Display Details</button>
       <p *ngIf="displayParagraph">I am a paragraph.</p>
-      <p [ngStyle]="changesStyle()">Click count is {{ count }}</p>
+      <div
+        *ngFor="let countItem of clickCount"
+        [ngStyle]="{backgroundColor: countItem >= 5 ? 'blue' : 'white'}"
+        [ngClass]="{'white-text': countItem >=5 }">
+          {{ countItem }}
+      </div>
     </div>
   </div>
 </div>
