@@ -6,14 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  displayParagraph=false;
+  displayParagraph = false;
+  count = 0;
 
-  onDisplayParagraph() {
+  onDisplayParagraph(event:any) {
     if (this.displayParagraph === false) {
       this.displayParagraph = true;
     } else {
       this.displayParagraph = false;
     }
-    console.log(this.displayParagraph)
+    this.count++;
   }
+
+  changesStyle() {
+    if (this.count >= 5) {
+      return {
+        backgroundColor: "blue",
+        color: "white"
+      }
+    }
+  }
+
 }
